@@ -1,0 +1,14 @@
+<div class="login-bg d-flex justify-content-center align-item-center">
+  <form action="" [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form mt-lg-4">
+    <div class="card p-3" style="width: 19rem">
+      <h1 class="text-white">ADMIN</h1>
+      <input type="text" formControlName="email"  class="form-control mt-3" placeholder="Username">
+      <p class="text-danger" *ngIf="submit&&loginForm.controls['email'].errors?.required">*Email is required</p>
+      <p class="text-danger" *ngIf="loginForm.controls['email'].errors?.email">*Enter valid email</p>
+      <input type="text" formControlName="password" class="form-control mt-3" placeholder="Password">
+      <p class="text-danger" *ngIf="submit&&loginForm.controls['password'].errors?.required">*Password is required</p>
+      <p class="text-danger" *ngIf="loginForm.controls['password'].errors?.minlength">*Password must have min length 4</p>
+      <button type="submit" class="w-50 mt-lg-4 btn btn-primary">Login</button>
+    </div>
+  </form>
+</div>
